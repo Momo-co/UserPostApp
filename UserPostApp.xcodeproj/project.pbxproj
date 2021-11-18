@@ -16,6 +16,8 @@
 		080EB9D82746BF2C00A577D6 /* UserPostAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080EB9D72746BF2C00A577D6 /* UserPostAppTests.swift */; };
 		080EB9E22746BF2C00A577D6 /* UserPostAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080EB9E12746BF2C00A577D6 /* UserPostAppUITests.swift */; };
 		080EB9E42746BF2C00A577D6 /* UserPostAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080EB9E32746BF2C00A577D6 /* UserPostAppUITestsLaunchTests.swift */; };
+		080EB9F12746C81C00A577D6 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080EB9F02746C81C00A577D6 /* UsersTableViewCell.swift */; };
+		080EB9F32746C9DE00A577D6 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080EB9F22746C9DE00A577D6 /* Users.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -49,6 +51,8 @@
 		080EB9DD2746BF2C00A577D6 /* UserPostAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = UserPostAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		080EB9E12746BF2C00A577D6 /* UserPostAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostAppUITests.swift; sourceTree = "<group>"; };
 		080EB9E32746BF2C00A577D6 /* UserPostAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		080EB9F02746C81C00A577D6 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
+		080EB9F22746C9DE00A577D6 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,6 +110,8 @@
 				080EB9C92746BF2C00A577D6 /* Assets.xcassets */,
 				080EB9CB2746BF2C00A577D6 /* LaunchScreen.storyboard */,
 				080EB9CE2746BF2C00A577D6 /* Info.plist */,
+				080EB9F02746C81C00A577D6 /* UsersTableViewCell.swift */,
+				080EB9F22746C9DE00A577D6 /* Users.swift */,
 			);
 			path = UserPostApp;
 			sourceTree = "<group>";
@@ -258,7 +264,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				080EB9F12746C81C00A577D6 /* UsersTableViewCell.swift in Sources */,
 				080EB9C52746BF2900A577D6 /* ViewController.swift in Sources */,
+				080EB9F32746C9DE00A577D6 /* Users.swift in Sources */,
 				080EB9C12746BF2900A577D6 /* AppDelegate.swift in Sources */,
 				080EB9C32746BF2900A577D6 /* SceneDelegate.swift in Sources */,
 			);

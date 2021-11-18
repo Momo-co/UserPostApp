@@ -7,8 +7,18 @@
 
 import UIKit
 
+protocol PassNameProtocol: AnyObject {
+    func updateHello(name: String)
+}
+
+protocol ShareNameProtocol: AnyObject {
+    func helloUser(name: String)
+}
+
 class ViewController: UIViewController {
 
+    @IBOutlet weak var helloLabel: UILabel!
+    
     @IBOutlet weak var tableView: UITableView!
     var users:[Users] = []
     
@@ -17,6 +27,7 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
         self.getUsers()
         tableView.dataSource = self
+        tableView.delegate = self
     }
     
     func getUsers() {
@@ -62,7 +73,7 @@ extension ViewController: UITableViewDataSource {
         
         let cellUser = users[indexPath.row]
         
-        cell.nameLabel.text = "Name: \(cellUser.name)"
+        cell.nameLabel.text = "\(cellUser.name)"
         
         cell.userNameLabel.text = "User Name: \(cellUser.userName)"
         
@@ -74,7 +85,39 @@ extension ViewController: UITableViewDataSource {
         
         cell.phoneLabel.text = "Phone: \(cellUser.phone)"
         
+        cell.shareDelegate = self
+        
         return cell
     }
 }
 
+extension ViewController: UITableViewDelegate {
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        
+        guard let postsViewController = storyBoard.instantiateViewController(withIdentifier: "PostsDetails") as? PostsViewController else {
+            return
+        }
+        
+        let user = users[indexPath.row]
+        
+        postsViewController.user = user
+        
+        postsViewController.delegate = self
+        
+        self.navigationController?.pushViewController(postsViewController, animated: true)
+    }
+}
+
+extension ViewController: PassNameProtocol {
+    func updateHello(name: String) {
+        helloLabel.text? = "Hello \(name)"
+    }
+}
+
+extension ViewController: ShareNameProtocol {
+    func helloUser(name: String) {
+        helloLabel.text? = "Hello \(name)"
+    }
+}

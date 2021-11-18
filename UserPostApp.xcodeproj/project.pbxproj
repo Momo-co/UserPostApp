@@ -18,6 +18,7 @@
 		080EB9E42746BF2C00A577D6 /* UserPostAppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080EB9E32746BF2C00A577D6 /* UserPostAppUITestsLaunchTests.swift */; };
 		080EB9F12746C81C00A577D6 /* UsersTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080EB9F02746C81C00A577D6 /* UsersTableViewCell.swift */; };
 		080EB9F32746C9DE00A577D6 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080EB9F22746C9DE00A577D6 /* Users.swift */; };
+		080EB9F52746E90A00A577D6 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080EB9F42746E90A00A577D6 /* PostsViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +54,7 @@
 		080EB9E32746BF2C00A577D6 /* UserPostAppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPostAppUITestsLaunchTests.swift; sourceTree = "<group>"; };
 		080EB9F02746C81C00A577D6 /* UsersTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersTableViewCell.swift; sourceTree = "<group>"; };
 		080EB9F22746C9DE00A577D6 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		080EB9F42746E90A00A577D6 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -112,6 +114,7 @@
 				080EB9CE2746BF2C00A577D6 /* Info.plist */,
 				080EB9F02746C81C00A577D6 /* UsersTableViewCell.swift */,
 				080EB9F22746C9DE00A577D6 /* Users.swift */,
+				080EB9F42746E90A00A577D6 /* PostsViewController.swift */,
 			);
 			path = UserPostApp;
 			sourceTree = "<group>";
@@ -264,6 +267,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				080EB9F52746E90A00A577D6 /* PostsViewController.swift in Sources */,
 				080EB9F12746C81C00A577D6 /* UsersTableViewCell.swift in Sources */,
 				080EB9C52746BF2900A577D6 /* ViewController.swift in Sources */,
 				080EB9F32746C9DE00A577D6 /* Users.swift in Sources */,

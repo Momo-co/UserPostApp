@@ -21,6 +21,13 @@ class UsersTableViewCell: UITableViewCell {
     
     @IBOutlet weak var companyNameLabel: UILabel!
     
+    weak var shareDelegate:ShareNameProtocol?
+    
+    @IBAction func shareButton(_ sender: Any) {
+        let name = self.nameLabel.text
+        shareDelegate?.helloUser(name: name ?? "")
+        
+    }
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

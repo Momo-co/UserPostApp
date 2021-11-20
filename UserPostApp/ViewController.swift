@@ -87,6 +87,10 @@ extension ViewController: UITableViewDataSource {
         
         cell.shareDelegate = self
         
+        cell.shareClosure = { name in
+            self.updateHello(name: name)
+        }
+        
         return cell
     }
 }
@@ -105,6 +109,10 @@ extension ViewController: UITableViewDelegate {
         postsViewController.user = user
         
         postsViewController.delegate = self
+        
+        postsViewController.completionBlock = { name in
+            self.updateHello(name: name)
+        }
         
         self.navigationController?.pushViewController(postsViewController, animated: true)
     }

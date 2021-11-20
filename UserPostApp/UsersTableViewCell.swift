@@ -22,10 +22,15 @@ class UsersTableViewCell: UITableViewCell {
     @IBOutlet weak var companyNameLabel: UILabel!
     
     weak var shareDelegate:ShareNameProtocol?
+    var shareClosure:((String)->Void)?
     
     @IBAction func shareButton(_ sender: Any) {
         let name = self.nameLabel.text
-        shareDelegate?.helloUser(name: name ?? "")
+        
+        if let _shareClosure = shareClosure {
+            _shareClosure(name ?? "")
+        }
+        //shareDelegate?.helloUser(name: name ?? "")
         
     }
     override func awakeFromNib() {

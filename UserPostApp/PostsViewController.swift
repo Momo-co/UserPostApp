@@ -11,6 +11,7 @@ class PostsViewController: UIViewController {
     
     var user:Users?
     weak var delegate:PassNameProtocol?
+    var completionBlock:((String)->Void)?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -22,7 +23,10 @@ class PostsViewController: UIViewController {
     @IBAction func clickSumanButton(_ sender: Any) {
         let name = (sender as! UIButton).titleLabel?.text
         
-        delegate?.updateHello(name: name ?? "")
+        if let _completionBlock = completionBlock {
+            _completionBlock(name ?? "")
+        }
+        //delegate?.updateHello(name: name ?? "")
         
         self.navigationController?.popViewController(animated: true)
     }
@@ -30,7 +34,10 @@ class PostsViewController: UIViewController {
     @IBAction func clickGeetanjaliButton(_ sender: Any) {
         let name = (sender as! UIButton).titleLabel?.text
         
-        delegate?.updateHello(name: name ?? "")
+        if let _completionBlock = completionBlock {
+            _completionBlock(name ?? "")
+        }
+        //delegate?.updateHello(name: name ?? "")
         
         self.navigationController?.popViewController(animated: true)
     }
@@ -38,7 +45,10 @@ class PostsViewController: UIViewController {
     @IBAction func clickDavidButton(_ sender: Any) {
         let name = (sender as! UIButton).titleLabel?.text
         
-        delegate?.updateHello(name: name ?? "")
+        if let _completionBlock = completionBlock {
+            _completionBlock(name ?? "")
+        }
+        //delegate?.updateHello(name: name ?? "")
         
         self.navigationController?.popViewController(animated: true)
     }

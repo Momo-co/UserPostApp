@@ -28,7 +28,9 @@ class PostsViewController: UIViewController {
         }
         //delegate?.updateHello(name: name ?? "")
         
-        self.navigationController?.popViewController(animated: true)
+        //self.navigationController?.popViewController(animated: true)
+        let settingViewController = SettingViewController()
+        self.navigationController?.pushViewController(settingViewController, animated: true)
     }
     
     @IBAction func clickGeetanjaliButton(_ sender: Any) {
@@ -39,7 +41,9 @@ class PostsViewController: UIViewController {
         }
         //delegate?.updateHello(name: name ?? "")
         
-        self.navigationController?.popViewController(animated: true)
+        //self.navigationController?.popViewController(animated: true)
+        let settingViewController = SettingViewController()
+        self.navigationController?.pushViewController(settingViewController, animated: true)
     }
     
     @IBAction func clickDavidButton(_ sender: Any) {
@@ -50,7 +54,9 @@ class PostsViewController: UIViewController {
         }
         //delegate?.updateHello(name: name ?? "")
         
-        self.navigationController?.popViewController(animated: true)
+        //self.navigationController?.popViewController(animated: true)
+        let settingViewController = SettingViewController()
+        self.navigationController?.pushViewController(settingViewController, animated: true)
     }
     /*
     // MARK: - Navigation

@@ -185,6 +185,22 @@
             </objects>
             <point key="canvasLocation" x="1961" y="38"/>
         </scene>
+        <!--Setting View Controller-->
+        <scene sceneID="9zD-pz-hcq">
+            <objects>
+                <viewController storyboardIdentifier="SettingViewController" id="JZU-h2-QfE" customClass="SettingViewController" customModule="UserPostApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="qA5-M5-Ji8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="Ms9-vv-w28"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Go8-TX-Plo"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BBR-6l-9iM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2990" y="38"/>
+        </scene>
         <!--Navigation Controller-->
         <scene sceneID="SHm-m7-zh4">
             <objects>

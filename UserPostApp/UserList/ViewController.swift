@@ -21,41 +21,15 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
     var users:[Users] = []
+    var networkManager = NetworkManager()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        self.getUsers()
+        networkManager.networkDelegate = self
+        networkManager.getUsers()
         tableView.dataSource = self
         tableView.delegate = self
-    }
-    
-    func getUsers() {
-        
-        let urlSession = URLSession.shared
-        
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/users") else {
-            return
-        }
-        
-        let dataTask = urlSession.dataTask(with: url) { data, urlResponse, error in
-            let jsonDecoder = JSONDecoder()
-            
-            guard let _data = data else {
-                return
-            }
-            
-            do {
-                self.users = try jsonDecoder.decode([Users].self, from: _data)
-                DispatchQueue.main.async {
-                    self.tableView.reloadData()
-                }
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-        
-        dataTask.resume()
     }
 
 }
@@ -127,5 +101,14 @@ extension ViewController: PassNameProtocol {
 extension ViewController: ShareNameProtocol {
     func helloUser(name: String) {
         helloLabel.text? = "Hello \(name)"
+    }
+}
+
+extension ViewController: NetworkingProtocol {
+    func passUser(users: [Users]) {
+        self.users = users
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
     }
 }

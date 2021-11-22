@@ -20,14 +20,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var helloLabel: UILabel!
     
     @IBOutlet weak var tableView: UITableView!
-    var users:[Users] = []
-    var networkManager = NetworkManager()
+
+    let userPresenter = UserPresenter()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
-        networkManager.networkDelegate = self
-        networkManager.getUsers()
+        
+        userPresenter.getUsers { isLoaded in
+            if isLoaded {
+                self.tableView.reloadData()
+            }
+        }
         tableView.dataSource = self
         tableView.delegate = self
     }
@@ -37,7 +41,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return users.count
+        return userPresenter.numberOfUsers
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -45,7 +49,7 @@ extension ViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let cellUser = users[indexPath.row]
+        let cellUser = userPresenter.getAUser(index: indexPath.row)
         
         cell.nameLabel.text = "\(cellUser.name)"
         
@@ -78,7 +82,7 @@ extension ViewController: UITableViewDelegate {
             return
         }
         
-        let user = users[indexPath.row]
+        let user = userPresenter.getAUser(index: indexPath.row)
         
         postsViewController.user = user
         
@@ -101,14 +105,5 @@ extension ViewController: PassNameProtocol {
 extension ViewController: ShareNameProtocol {
     func helloUser(name: String) {
         helloLabel.text? = "Hello \(name)"
-    }
-}
-
-extension ViewController: NetworkingProtocol {
-    func passUser(users: [Users]) {
-        self.users = users
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
-        }
     }
 }

@@ -6,34 +6,37 @@
 //
 
 import Foundation
-protocol NetworkingProtocol: AnyObject {
-    func passUser(users: [Users])
-}
+
 
 class NetworkManager {
     
-    weak var networkDelegate:NetworkingProtocol?
-    func getUsers() {
+    func getUsersResult() {
+        
+    }
+    
+    func getUsers<T:Decodable>(urlString: String, type:T.Type, completionHandler:(@escaping(Result<[T], Error>)->Void)) {
         
         let urlSession = URLSession.shared
         
-        guard let url = URL(string: "https://jsonplaceholder.typicode.com/users") else {
+        guard let url = URL(string: urlString) else {
             return
         }
         
         let dataTask = urlSession.dataTask(with: url) { data, urlResponse, error in
-            let jsonDecoder = JSONDecoder()
+
             
             guard let _data = data else {
+                completionHandler(.failure(error as! Error))
                 return
             }
+            let jsonDecoder = JSONDecoder()
             
             do {
-                let users = try jsonDecoder.decode([Users].self, from: _data)
-                self.networkDelegate?.passUser(users: users)
+                let users = try jsonDecoder.decode([T].self, from: _data)
+                completionHandler(.success(users))
 
             } catch {
-                print(error.localizedDescription)
+                completionHandler(.failure(error))
             }
         }
         

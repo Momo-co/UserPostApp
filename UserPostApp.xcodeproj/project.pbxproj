@@ -21,6 +21,7 @@
 		080EB9F52746E90A00A577D6 /* PostsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 080EB9F42746E90A00A577D6 /* PostsViewController.swift */; };
 		08368FB7274AE89A0022535C /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08368FB6274AE89A0022535C /* NetworkManager.swift */; };
 		08368FBB274AF1380022535C /* UserPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08368FBA274AF1380022535C /* UserPresenter.swift */; };
+		08393AA5274C49B300642982 /* Posts.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08393AA4274C49B300642982 /* Posts.swift */; };
 		087D6923274993B000450A87 /* SettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087D6922274993B000450A87 /* SettingViewController.swift */; };
 		087D69252749BE3400450A87 /* CalculatorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087D69242749BE3400450A87 /* CalculatorTests.swift */; };
 		087D69272749BEB800450A87 /* Calculator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 087D69262749BEB800450A87 /* Calculator.swift */; };
@@ -62,6 +63,7 @@
 		080EB9F42746E90A00A577D6 /* PostsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostsViewController.swift; sourceTree = "<group>"; };
 		08368FB6274AE89A0022535C /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		08368FBA274AF1380022535C /* UserPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserPresenter.swift; sourceTree = "<group>"; };
+		08393AA4274C49B300642982 /* Posts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Posts.swift; sourceTree = "<group>"; };
 		087D6922274993B000450A87 /* SettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingViewController.swift; sourceTree = "<group>"; };
 		087D69242749BE3400450A87 /* CalculatorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorTests.swift; sourceTree = "<group>"; };
 		087D69262749BEB800450A87 /* Calculator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calculator.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				080EB9F42746E90A00A577D6 /* PostsViewController.swift */,
 				087D6922274993B000450A87 /* SettingViewController.swift */,
 				087D69262749BEB800450A87 /* Calculator.swift */,
+				08393AA4274C49B300642982 /* Posts.swift */,
 			);
 			path = UserPostApp;
 			sourceTree = "<group>";
@@ -304,6 +307,7 @@
 				08368FBB274AF1380022535C /* UserPresenter.swift in Sources */,
 				080EB9C52746BF2900A577D6 /* ViewController.swift in Sources */,
 				080EB9F32746C9DE00A577D6 /* Users.swift in Sources */,
+				08393AA5274C49B300642982 /* Posts.swift in Sources */,
 				080EB9C12746BF2900A577D6 /* AppDelegate.swift in Sources */,
 				087D69272749BEB800450A87 /* Calculator.swift in Sources */,
 				087D6923274993B000450A87 /* SettingViewController.swift in Sources */,

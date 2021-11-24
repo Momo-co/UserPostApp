@@ -43,7 +43,7 @@ class ViewController: UIViewController {
 extension ViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return userPresenter.numberOfUsers
+        return userViewModel.numberOfUsers
     }
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
@@ -51,7 +51,7 @@ extension ViewController: UITableViewDataSource {
             return UITableViewCell()
         }
         
-        let cellUser = userPresenter.getAUser(index: indexPath.row)
+        let cellUser = userViewModel.getAUser(index: indexPath.row)
         
         cell.nameLabel.text = "\(cellUser.name)"
         
@@ -84,7 +84,7 @@ extension ViewController: UITableViewDelegate {
             return
         }
         
-        let user = userPresenter.getAUser(index: indexPath.row)
+        let user = userViewModel.getAUser(index: indexPath.row)
         
         postsViewController.user = user
         

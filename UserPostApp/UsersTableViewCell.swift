@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol ShareNameProtocol: AnyObject {
+    func helloUser(name: String)
+}
+
 class UsersTableViewCell: UITableViewCell {
 
     @IBOutlet weak var nameLabel: UILabel!

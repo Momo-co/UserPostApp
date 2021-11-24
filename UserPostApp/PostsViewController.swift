@@ -7,6 +7,10 @@
 
 import UIKit
 
+protocol PassNameProtocol: AnyObject {
+    func updateHello(name: String)
+}
+
 class PostsViewController: UIViewController {
     
     var user:Users?

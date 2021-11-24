@@ -6,14 +6,7 @@
 //
 
 import UIKit
-
-protocol PassNameProtocol: AnyObject {
-    func updateHello(name: String)
-}
-
-protocol ShareNameProtocol: AnyObject {
-    func helloUser(name: String)
-}
+import Combine
 
 class ViewController: UIViewController {
 
@@ -22,18 +15,27 @@ class ViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
 
     let userPresenter = UserPresenter()
+    var cancellable:AnyCancellable?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        userPresenter.getUsers { isLoaded in
-            if isLoaded {
+        userPresenter.getUsers()
+        cancellable = userPresenter.$users.sink(receiveValue: { users in
+            DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-        }
+            
+        })
+        
         tableView.dataSource = self
         tableView.delegate = self
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        cancellable?.cancel()
     }
 
 }

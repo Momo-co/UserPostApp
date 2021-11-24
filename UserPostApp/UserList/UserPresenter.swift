@@ -5,17 +5,17 @@
 //  Created by Suman Gurung on 21/11/2021.
 //
 
-import Foundation
+import Foundation 
 
 class UserPresenter {
-    private var users:[Users] = []
+    @Published private(set) var users:[Users] = []
     
     var numberOfUsers:Int {
         return users.count
     }
     private let networkManager = NetworkManager()
     
-    func getUsers(completionHandler:@escaping(Bool)->Void) {
+    func getUsers() {
         networkManager.getUsers(urlString: "https://jsonplaceholder.typicode.com/users", type: Users.self) { result in
             switch result {
             case.success(let users):
@@ -24,9 +24,6 @@ class UserPresenter {
                 print(error.localizedDescription)
             }
             
-            DispatchQueue.main.async {
-                completionHandler(true)
-            }
         }
     }
     

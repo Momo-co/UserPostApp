@@ -14,15 +14,15 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var tableView: UITableView!
 
-    let userPresenter = UserPresenter()
+    let userViewModel = UserViewModel()
     var cancellable:AnyCancellable?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        userPresenter.getUsers()
-        cancellable = userPresenter.$users.sink(receiveValue: { users in
+        userViewModel.getUsers()
+        cancellable = userViewModel.$users.sink(receiveValue: { users in
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }

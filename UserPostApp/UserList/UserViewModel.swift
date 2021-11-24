@@ -7,7 +7,7 @@
 
 import Foundation 
 
-class UserPresenter {
+class UserViewModel {
     @Published private(set) var users:[Users] = []
     
     var numberOfUsers:Int {
